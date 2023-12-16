@@ -1,0 +1,85 @@
+import { Alert, Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Header } from "./Header";
+import { useState } from "react";
+import { saveCustomer } from "../services/CustomerService";
+import { NavigationBar } from "./NavigationBar";
+
+export function BookingForm() {
+
+    const [formData, setFormData] = useState({ slot: "", name: "", phone: "", carnumber: "" });
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(formData);
+        try {
+            const result = await saveCustomer(formData);
+            setFormData({ slot: "", name: "", phone: "", carnumber: "" });
+            setIsSubmitted(true);
+            setTimeout(() => {
+                setIsSubmitted(false);
+            }, 1500);
+            console.log(result.message);
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+
+    return (
+        <>
+            <NavigationBar />
+            <Container>
+                <Header text="Book here"></Header>
+
+                <Form onSubmit={handleSubmit}>
+                    <Row>
+                        <Col lg={6}>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Slot Number</Form.Label>
+                                <Form.Control type="Number" placeholder="Enter slot number" value={isSubmitted ? formData.slot : null} name="slot" onKeyUp={handleChange} required/>
+                            </Form.Group>
+                        </Col>
+
+                        <Col lg={6}>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type="text" placeholder="Enter name" value={isSubmitted ? formData.name : null} name="name" onKeyUp={handleChange} required />
+                            </Form.Group>
+                        </Col>
+
+                        <Col lg={6}>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Phone Number</Form.Label>
+                                <Form.Control type="text" placeholder="Enter number" value={isSubmitted ? formData.phone : null} name="phone" onChange={handleChange} required/>
+                            </Form.Group>
+                        </Col>
+
+                        <Col lg={6}>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Car Number</Form.Label>
+                                <Form.Control type="text" placeholder="Enter car number" value={isSubmitted ? formData.carnumber : null} name="carnumber" onKeyUp={handleChange} required/>
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={3}>
+                            <Button variant="primary" type="submit">Register</Button>
+                        </Col>
+                    </Row>
+                </Form>
+                <Col lg={4} className="mt-4">
+                    {isSubmitted ? <Alert variant="success">Booking Confirmed</Alert> : null}
+                </Col>
+            </Container>
+
+        </>
+
+
+    );
+}

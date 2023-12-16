@@ -1,0 +1,11 @@
+export const ERROR_MESSAGE="Something went wrong";
+export const INSERT_SUCCESS="Customer inserted sccessfully";
+export const CUSTOMER_NOT_FOUND="Customer not found";
+export const UPDATE_SUCCESS="Customer updated";
+export const DELETE_SUCCESS="Customer deleted";
+export const PORT_NUMBER=5940;
+export const REGISTER_SUCCESS="Register successful";
+export const REGISTER_FAIL="Email or Password not vaild";
+export const LOGIN_SUCCESS="Login sucessful";
+export const LOGIN_FAIL="Login fail";
+export const NOT_FOUND="User not get register";

@@ -1,0 +1,64 @@
+
+.heading{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.slider{
+    margin-top: 40px;
+}
+
+
+.contentContainer{
+    margin-top: 80px;
+    
+}
+
+#contentContainerRow{
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    /* font-weight: 700; */
+    line-height: 2.1;
+}
+
+/* footer section */
+footer{
+    padding: 50px;
+    margin-top: 40px;
+    color: white;
+    background-color: black;
+}
+
+.footer_container{
+    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.block h5{
+    padding-bottom: 20px;
+}
+
+.block li{
+    margin-left: -30px;
+    line-height: 2.0;
+}
+
+.copyright_container{
+    text-align: center;
+    font-weight: 350;
+    padding-top: 30px;
+    align-items: center;
+}
+
+
+
+
+/* FOr Header CSS */
+.alert{
+    text-align: center;
+}
+

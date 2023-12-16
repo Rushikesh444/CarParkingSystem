@@ -1,0 +1,39 @@
+.headingContainer{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-heading{
+    color: red;
+}
+
+.mainContact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-img{
+    padding: 40px 0px 40px 0px;
+    display: flex;
+    justify-content: center;
+}
+.contactFormContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.contactForm{
+    padding: 50px;
+    border: 2px solid gray;
+    background-color: aliceblue;
+}
+
+#message{
+    resize: none;
+}

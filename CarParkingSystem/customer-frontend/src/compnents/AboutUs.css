@@ -1,0 +1,26 @@
+.cardContainer{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.intro{
+    height: 200px;
+    text-align: center;
+}
+
+.socialLink{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-title{
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
